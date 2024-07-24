@@ -7,7 +7,9 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "express": "^4",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -21,29 +23,33 @@
   },
   "sapux": [
     "app/risk"
-  ]
-  ,"cds": {
+  ],
+  "cds": {
     "requires": {
       "[development]": {
         "auth": {
           "kind": "mocked",
           "users": {
-              "rv@tester.sap.com": {
-                  "password": "initial",
-                  "ID": "rv@tester.sap.com",
-                  "roles": [
-                    "RiskViewer"
-                  ]
-              },
-              "rm@tester.sap.com": {
-                  "password": "initial",
-                  "ID": "rm@tester.sap.com",
-                  "roles": [
-                    "RiskManager"
-                  ]
-              }
+            "rv@tester.sap.com": {
+              "password": "initial",
+              "ID": "rv@tester.sap.com",
+              "roles": [
+                "RiskViewer"
+              ]
+            },
+            "rm@tester.sap.com": {
+              "password": "initial",
+              "ID": "rm@tester.sap.com",
+              "roles": [
+                "RiskManager"
+              ]
+            }
           }
         }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
       }
     }
   }
