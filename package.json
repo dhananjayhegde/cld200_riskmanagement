@@ -7,15 +7,20 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
     "@sap/cds-hana": "^2",
-    "@sap/xssec": "^3"
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
     "@sap/ux-specification": "^1.120.13",
     "eslint": "^9"
+  },
+  "engines": {
+    "node": "^18"
   },
   "scripts": {
     "start": "cds-serve",
